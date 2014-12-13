@@ -1,3 +1,12 @@
 {{outlet}}
 
-<h1>DASHBOARD</h1>
+<h1>WARSAW TRAFFIC</h1>
+
+<div class="chart-container">
+
+  {{time-series-chart
+    barData=timeSeriesBarContent
+    lineData=timeSeriesLineContent
+  }}
+</div>
+
