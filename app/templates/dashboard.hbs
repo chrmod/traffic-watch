@@ -1,12 +1,16 @@
 {{outlet}}
 
-<h1>WARSAW TRAFFIC</h1>
+<div class='visible-xs'>
 
-<div class="chart-container">
+  <h3>WARSAW TRAFFIC</h3>
+  <div class="chart-container">
 
-  {{time-series-chart
-    barData=timeSeriesBarContent
-    lineData=timeSeriesLineContent
-  }}
+    {{time-series-chart
+      barData=timeSeriesBarContent
+      lineData=timeSeriesLineContent
+      badData=daily_curr_value
+      selectedInterval='H'
+    }}
+  </div>
+
 </div>
-
