@@ -1,5 +1,5 @@
 import Ember from 'ember';
-/* global d3 */
+import d3 from '../utils/d3';
 
 export default Ember.Controller.extend({
 
