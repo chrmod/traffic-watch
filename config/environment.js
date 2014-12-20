@@ -19,6 +19,11 @@ module.exports = function(environment) {
     }
   };
 
+  ENV.googleMap = {
+    key: 'AIzaSyCgjEq8IOYmdK0hOKmBjVyPY9QY2aJErP4'
+  };
+
+
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     ENV.APP.LOG_ACTIVE_GENERATION = true;

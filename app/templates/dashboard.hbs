@@ -13,4 +13,16 @@
     }}
   </div>
 
+  {{google-map lat=lat lng=lng type=type zoom=zoom}}
+
+  <h3>Map settings</h3>
+  <div>
+    <label>Lat: {{input value=lat}}</label>
+    <label>Lng: {{input value=lng}}</label>
+    <label>Zoom: {{input value=zoom}}</label>
+    <label>Type: {{view Ember.Select content=mapTypes
+      optionLabelPath='content.label' optionValuePath='content.id' value=type}}
+    </label>
+  </div>
+
 </div>

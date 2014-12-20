@@ -1,7 +1,15 @@
 import Ember from 'ember';
 import d3 from '../utils/d3';
+import {MAP_TYPES} from 'ember-google-map/app/components/google-map';
 
 export default Ember.Controller.extend({
+
+  lat:         0,
+  lng:         0,
+  zoom:        5,
+  type:        'road',
+  mapTypes:    MAP_TYPES,
+
 
   timeSeriesBarContent: [],
 
