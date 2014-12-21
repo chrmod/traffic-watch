@@ -12,3 +12,13 @@ html, body {
   height: 400px;
   width: 600px;
 }
+
+svg * {
+    stroke:black;
+}
+rect {
+    fill:red;
+}
+circle {
+    fill:blue;
+}
