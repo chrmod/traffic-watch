@@ -5,16 +5,9 @@
 
 
   <h3>WARSAW TRAFFIC</h3>
-  <div class="chart-container">
 
-    {{time-series-chart
-      barData=timeSeriesBarContent
-      lineData=timeSeriesLineContent
-      badData=daily_curr_value
-      selectedInterval='H'
-    }}
-  </div>
+  {{ traffic-chart }}
 
-{{city-map}}
+  {{ city-map }}
 
 </div>
