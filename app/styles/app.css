@@ -5,3 +5,8 @@ html, body {
 .chart-container {
   height: 500px;
 }
+
+.map-canvas {
+  height: 500px;
+  width: 100%;
+}
