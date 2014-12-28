@@ -3,10 +3,12 @@ html, body {
 }
 
 .chart-container {
-  height: 500px;
+  height: 400px;
+  width: 600px;
 }
 
 .map-canvas {
-  height: 500px;
-  width: 100%;
+  margin-top: 32px;
+  height: 400px;
+  width: 600px;
 }
