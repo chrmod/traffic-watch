@@ -13,6 +13,6 @@
     "ember-qunit": "0.1.8",
     "ember-qunit-notifications": "0.0.4",
     "qunit": "~1.15.0",
-    "ember-charts": "~0.3.0"
+    "ember-charts": "tuhaj/ember-charts#tuhaj/adds_hours_to_selectedInterval"
   }
 }

@@ -1,6 +1,6 @@
 import Ember from 'ember';
 import d3 from '../utils/d3';
-import {MAP_TYPES} from 'ember-google-map/app/components/google-map';
+import {MAP_TYPES} from '../components/google-map';
 
 export default Ember.Controller.extend({
 
