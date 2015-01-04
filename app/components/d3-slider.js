@@ -6,6 +6,9 @@ export default Ember.Component.extend({
   classNames: ["d3-slider"],
 
   draw: function() {
+    var that = this;
+    console.log('zipPosition');
+    console.log(this.get('zipPosition'));
 
     var dragCircle = d3.behavior.drag()
       .on('dragstart', function () {
@@ -21,6 +24,8 @@ export default Ember.Component.extend({
         d.cx = 370;
       } else {
         d.cx += d3.event.dx;
+        // console.log(d.cx);
+        that.sendAction('action', d.cx);
       }
       if( d.cx >= 34 && d.cx <= 370) {
         d3.select(this).attr('cx', d.cx).attr('cy', d.cy);

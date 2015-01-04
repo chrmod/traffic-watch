@@ -1,5 +1,6 @@
 import Ember from 'ember';
 import d3 from '../utils/d3';
+// import scrubber from '../components/scrubber';
 
 export default Ember.Component.extend({
 
@@ -135,5 +136,11 @@ export default Ember.Component.extend({
       label: "Warsaw",
       value: 30
     }
-  ]
+  ],
+
+  actions: {
+    setXPosition: function(position) {
+      this.set('xPosition', position);
+    }
+  }
 });

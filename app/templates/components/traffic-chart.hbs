@@ -1,7 +1,27 @@
 
 {{ time-series-chart
+  zipPosition=zipPosition
   barData=timeSeriesBarContent
   lineData=timeSeriesLineContent
-  badData=daily_curr_value
   selectedInterval='H'
+  xPosition=xPosition
+  setXPosition='setXPosition'
 }}
+
+<div class="form-horizontal">
+  <div class="form-group">
+    <label class="col-lg-4 control-label">Set hour</label>
+    <div class="col-lg-8">
+      {{ view App.ScrubberComponent min="0" max="24" step="1" valueBinding="xPosition"}}
+
+
+{{!--       {{ scrubber
+        min=0
+        max=24
+        step=1
+        valueBinding="xPosition"
+      }} --}}
+      <span class="help-block">Current hour: {{xPosition}}</span>
+    </div>
+  </div>
+</div>
