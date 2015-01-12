@@ -1,5 +1,6 @@
 import Ember from 'ember';
 import d3 from '../utils/d3';
+import scrubber from '../components/scrubber'
 
 export default Ember.Component.extend({
 
