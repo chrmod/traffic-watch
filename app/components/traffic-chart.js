@@ -3,7 +3,7 @@ import d3 from '../utils/d3';
 
 export default Ember.Component.extend({
 
-  classNames: ["chart-container"],
+  classNames: ["chart-container", "zoom"],
 
   timeSeriesBarContent: [],
 

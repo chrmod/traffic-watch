@@ -6,14 +6,12 @@
 
 {{ outlet }}
 
-<h3>Warsaw traffic</h3>
+<h4>Select city:</h4>
+{{view "select" content=names}}
 
-<div class='col-md-6'>
-  {{ city-map }}
-</div>
+{{ city-map }}
 
 <div class='col-md-6'>
   {{ traffic-chart }}
-  {{ d3-slider }}
 </div>
 

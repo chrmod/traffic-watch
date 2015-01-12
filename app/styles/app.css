@@ -1,16 +1,30 @@
 html, body {
+  background: #f0b400;
   margin: 20px;
 }
 
 .chart-container {
-  height: 400px;
+  margin-top: 150px;
+  margin-left: 100px;
+  background-color: white;
+  height: 450px;
   width: 600px;
+  z-index: 10;
+
 }
 
 .map-canvas {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: -1;
   margin-top: 32px;
-  height: 400px;
-  width: 600px;
+  height: 800px;
+  width: 100%;
+}
+
+.zoom {
+  zoom: 60%;
 }
 
 svg * {
