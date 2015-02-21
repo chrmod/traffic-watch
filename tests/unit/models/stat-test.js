@@ -3,7 +3,7 @@ import {
   test
 } from 'ember-qunit';
 
-moduleForModel('time-control', 'TimeControl', {
+moduleForModel('stat', 'Stat', {
   // Specify the other units that are required for this test.
   needs: []
 });

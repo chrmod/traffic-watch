@@ -4,6 +4,7 @@ export default DS.Model.extend({
 
   name:       DS.attr('string'),
   center:     DS.attr('string'),
-  markers:    DS.hasMany('marker')
+  markers:    DS.hasMany('marker'),
+  stats:      DS.hasMany('stat')
 
 });
