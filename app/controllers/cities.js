@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
-export default Ember.Controller.extend({
+export default Ember.ArrayController.extend({
 
-  names: ["Warsaw", "Cracow", "Danzing"]
+  names: Ember.computed.mapBy('model', 'name')
 
 });
