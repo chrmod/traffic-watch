@@ -1,6 +1,9 @@
-{{outlet}}
+{{!-- {{outlet}} --}}
+{{!-- {{ city-map }} --}}
 
-{{ city-map }}
+{{google-map lat=lat lng=lng zoom=zoom markers=markers}}
+
+<h1> Model is: {{ name }} </h1>
 
 <div class='col-md-6'>
   {{ traffic-chart }}
