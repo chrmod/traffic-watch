@@ -6,8 +6,10 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('dashboard', { path: '/'});
-  this.resource('timeControl', { path: 'timeControls/:timeControl_id' }, function() { });
+  this.resource('dashboard', { path: '/' }, function() {
+    this.resource('cities', { path: '/'});
+  });
+  // this.resource('timeControl', { path: 'timeControls/:timeControl_id' }, function() { });
 });
 
 export default Router;
