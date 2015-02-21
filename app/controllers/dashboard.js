@@ -4,4 +4,6 @@ export default Ember.Controller.extend({
 
 names: ["Warsaw", "Cracow", "Danzing"]
 
+
+
 });
