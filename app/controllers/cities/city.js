@@ -1,5 +1,4 @@
 import Ember from 'ember';
-import {MAP_TYPES} from '../../components/google-map';
 import d3 from '../../utils/d3';
 
 export default Ember.ObjectController.extend({
@@ -14,10 +13,6 @@ export default Ember.ObjectController.extend({
   lng: function () {
     return this.get('center').split(',')[1];
   }.property('center'),
-
-  zoom:        10,
-  type:        'road',
-  mapTypes:    MAP_TYPES,
 
 // CHART
   timeSeriesBarContent: [],

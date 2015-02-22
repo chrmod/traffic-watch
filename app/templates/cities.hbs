@@ -1,4 +1,7 @@
 
 <h4>Select city:</h4>
 {{view "select" content=names value=currentCity}}
+
+<div class='btn btn-default' {{action "changeCity" on="click"}} > CHANGE </div>
+
 {{ outlet }}
