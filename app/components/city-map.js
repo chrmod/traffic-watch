@@ -10,8 +10,4 @@ export default Ember.Component.extend({
   type:        'road',
   mapTypes:    MAP_TYPES
 
-  // parentViewDidChange: function () {
-  //   this.rerender();
-  // }
-
 });
