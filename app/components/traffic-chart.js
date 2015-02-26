@@ -8,11 +8,17 @@ export default Ember.Component.extend({
 
   xPosition: 12,
 
+  reloader: function () {
+    this.sendAction('changeCity', this.get('currentCity'));
+  }.observes('currentCity').on('init'),
 
   actions: {
+
     changeChart: function () {
+      console.log("logs!!");
       this.sendAction('changeChart');
     }
+
   }
 
 });

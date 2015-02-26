@@ -4,6 +4,8 @@ import d3 from '../../utils/d3';
 export default Ember.ObjectController.extend({
   needs: ['cities'],
 
+  names: Ember.computed.alias('controllers.cities.names'),
+  currentCity: 'Warsaw',
 // CHART
   timeSeriesBarContent: [],
 
@@ -31,6 +33,10 @@ export default Ember.ObjectController.extend({
 
     changeChart: function () {
       this.toggleProperty('dayChart');
+    },
+
+    changeCity: function (city) {
+      return this.transitionToRoute('cities.city', city);
     }
   }
 });

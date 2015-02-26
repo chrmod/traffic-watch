@@ -2,5 +2,12 @@
 {{ city-map lat=lat lng=lng markers=markers }}
 
 <div class='col-md-6'>
-  {{ traffic-chart dayContent=dayContent weekContent=weekContent dayChart=dayChart changeChart='changeChart'}}
+  {{ traffic-chart dayContent=dayContent
+                   weekContent=weekContent
+                   dayChart=dayChart
+                   names=names
+                   currentCity=currentCity
+                   changeChart='changeChart'
+                   changeCity='changeCity'
+  }}
 </div>

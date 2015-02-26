@@ -12,12 +12,16 @@
 }}
 {{/if}}
 
+
+
 {{#if dayChart}}
 <div class='btn btn-default' {{action "changeChart" on="click"}} > WEEK </div>
 {{else}}
 <div class='btn btn-default' {{action "changeChart" on="click"}} > DAY </div>
 {{/if}}
-
+<div class='pull-right'>
+{{view "select" content=names value=currentCity}}
+</div>
 {{!-- <div class="form-horizontal no-zoom">
   <div class="form-group">
     <label class="col-lg-4 control-label">Set hour</label>
