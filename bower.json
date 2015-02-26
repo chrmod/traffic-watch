@@ -13,7 +13,7 @@
     "ember-qunit": "0.1.8",
     "ember-qunit-notifications": "0.0.4",
     "qunit": "~1.15.0",
-    "ember-charts": "Addepar/ember-charts#d15564794",
+    "ember-charts": "Tuhaj/ember-charts#remove_dot_from_chart",
     "bootstrap": "~3.3.1"
   }
 }

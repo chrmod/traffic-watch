@@ -6,5 +6,13 @@ export default Ember.Component.extend({
 
   timeSeriesBarContent: [],
 
-  xPosition: 12
+  xPosition: 12,
+
+
+  actions: {
+    changeChart: function () {
+      this.sendAction('changeChart');
+    }
+  }
+
 });

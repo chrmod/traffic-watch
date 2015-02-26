@@ -3,12 +3,34 @@ import d3 from '../../utils/d3';
 
 export default Ember.ObjectController.extend({
   needs: ['cities'],
+
 // CHART
   timeSeriesBarContent: [],
-  timeSeriesLineContent: Ember.computed.map('model.stats', function (stat) {
+
+  dayContent: Ember.computed.map('model.stats', function (stat) {
     return {
       time: d3.time.format.iso.parse(stat.get('time')),
       value: stat.get('value')
     };
-  })
+  }),
+
+  weekContent: Ember.computed.map('weekStats', function (stat) {
+    return {
+      time: d3.time.format.iso.parse(stat.created_at),
+      value: stat.weighted_mean
+    };
+  }),
+
+  weekStats: [],
+
+  dayChart: true,
+
+
+
+  actions: {
+
+    changeChart: function () {
+      this.toggleProperty('dayChart');
+    }
+  }
 });

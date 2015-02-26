@@ -1,9 +1,22 @@
-
+{{#if dayChart }}
 {{ time-series-chart
   barData=timeSeriesBarContent
-  lineData=timeSeriesLineContent
+  lineData=dayContent
   selectedInterval='H'
 }}
+{{else}}
+{{ time-series-chart
+  barData=timeSeriesBarContent
+  lineData=weekContent
+  selectedInterval='D'
+}}
+{{/if}}
+
+{{#if dayChart}}
+<div class='btn btn-default' {{action "changeChart" on="click"}} > WEEK </div>
+{{else}}
+<div class='btn btn-default' {{action "changeChart" on="click"}} > DAY </div>
+{{/if}}
 
 {{!-- <div class="form-horizontal no-zoom">
   <div class="form-group">
