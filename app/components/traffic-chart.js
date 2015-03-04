@@ -15,7 +15,6 @@ export default Ember.Component.extend({
   actions: {
 
     changeChart: function () {
-      console.log("logs!!");
       this.sendAction('changeChart');
     }
 
