@@ -25,9 +25,7 @@ export default Ember.ObjectController.extend({
 
   weekStats: [],
 
-  dayChart: true,
-
-
+  dayChart: false,
 
   actions: {
 
@@ -36,6 +34,7 @@ export default Ember.ObjectController.extend({
     },
 
     changeCity: function (city) {
+      this.set('dayChart', false);
       return this.transitionToRoute('cities.city', city);
     }
   }

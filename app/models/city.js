@@ -5,7 +5,7 @@ export default DS.Model.extend({
   name:       DS.attr('string'),
   center:     DS.attr('string'),
   markers:    DS.hasMany('marker'),
-  stats:      DS.hasMany('stat'),
+  stats:      DS.hasMany('stat', {async: true}),
 
   lat: function () {
     return this.get('center').split(',')[0];
