@@ -16,6 +16,9 @@ export default Ember.ObjectController.extend({
     };
   }),
 
+  // filteredWeekStats: Ember.computed.filterBy('weekStats', function () {
+  // }),
+
   weekContent: Ember.computed.map('weekStats', function (stat) {
     return {
       time: d3.time.format.iso.parse(stat.created_at),
