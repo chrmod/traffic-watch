@@ -6,10 +6,15 @@ html, body {
   margin-top: 100px;
   margin-left: 100px;
   background-color: white;
-  height: 570px;
-  width: 610px;
+  padding: 50px;
+  height: 620px;
+  width: 620px;
   z-index: 10;
+  box-shadow: 10px 10px 5px #888888;
+}
 
+.day-buttons {
+  text-align: center;
 }
 
 .map-canvas {
@@ -22,12 +27,23 @@ html, body {
 }
 
 .zoom {
-  padding-right: 50px;
-  zoom: 60%;
+  zoom: 50%;
 }
 
 .no-zoom {
   zoom: 167%;
+}
+
+
+
+.city-selection {
+  position: absolute;
+  background: white;
+  left: 200px;
+  bottom: 570px;
+  border: 0px;
+  width: 30%;
+  font-size: 30px;
 }
 
 svg * {

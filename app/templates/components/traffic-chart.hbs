@@ -3,19 +3,19 @@
   lineData=weekContent
   selectedInterval='D'
 }}
-
-<div class='btn btn-default' {{action "setDay" "Mon" on="click"}} > Mon </div>
-<div class='btn btn-default' {{action "setDay" "Tue" on="click"}} > Tue </div>
-<div class='btn btn-default' {{action "setDay" "Wed" on="click"}} > Wed </div>
-<div class='btn btn-default' {{action "setDay" "Thu" on="click"}} > Thu </div>
-<div class='btn btn-default' {{action "setDay" "Fri" on="click"}} > Fri </div>
-<div class='btn btn-default' {{action "setDay" "Sat" on="click"}} > Sat </div>
-<div class='btn btn-default' {{action "setDay" "Sun" on="click"}} > Sun </div>
-
-
-<div class='pull-right'>
-{{view "select" content=names value=currentCity}}
+<div class='day-buttons'>
+  <div class='btn btn-default' {{action "setDay" "Mon" on="click"}} > Mon </div>
+  <div class='btn btn-default' {{action "setDay" "Tue" on="click"}} > Tue </div>
+  <div class='btn btn-default' {{action "setDay" "Wed" on="click"}} > Wed </div>
+  <div class='btn btn-default' {{action "setDay" "Thu" on="click"}} > Thu </div>
+  <div class='btn btn-default' {{action "setDay" "Fri" on="click"}} > Fri </div>
+  <div class='btn btn-default' {{action "setDay" "Sat" on="click"}} > Sat </div>
+  <div class='btn btn-default' {{action "setDay" "Sun" on="click"}} > Sun </div>
 </div>
+
+
+
+{{view "select" class='city-selection' content=names value=currentCity}}
 {{!-- <div class="form-horizontal no-zoom">
   <div class="form-group">
     <div class="col-lg-8">
