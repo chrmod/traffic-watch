@@ -16,10 +16,22 @@ export default Ember.ObjectController.extend({
     };
   }),
 
-  // filteredWeekStats: Ember.computed.filterBy('weekStats', function () {
-  // }),
+  // filteredWeekStats: function () {
+  //   var weekStats = this.get('weekStats');
+  //   return weekStats.filterBy('day', 'Wed');
+  // }.property('model', 'weekStats'),
 
-  weekContent: Ember.computed.map('weekStats', function (stat) {
+  day: 'Wed',
+
+  filteredWeekStats: Ember.computed.filter('weekStats', function (stat) {
+    var date = stat.created_at,
+        parsedDate = d3.time.format.iso.parse(date),
+        format = d3.time.format("%a");
+
+    return format(parsedDate) === this.get('day');
+  }),
+
+  weekContent: Ember.computed.map('filteredWeekStats', function (stat) {
     return {
       time: d3.time.format.iso.parse(stat.created_at),
       value: stat.weighted_mean
@@ -39,6 +51,11 @@ export default Ember.ObjectController.extend({
     changeCity: function (city) {
       this.set('dayChart', false);
       return this.transitionToRoute('cities.city', city);
+    },
+
+    setDay: function (day) {
+      console.log(day);
+      this.set('day', day);
     }
   }
 });

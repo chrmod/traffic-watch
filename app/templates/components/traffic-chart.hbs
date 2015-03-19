@@ -19,6 +19,10 @@
 {{else}}
 <div class='btn btn-default' {{action "changeChart" on="click"}} > DAY </div>
 {{/if}}
+<div class='btn btn-default' {{action "setDay" "Thu" on="click"}} > Thu </div>
+
+<div class='btn btn-default' {{action "setDay" "Wed" on="click"}} > Wed </div>
+
 <div class='pull-right'>
 {{view "select" content=names value=currentCity}}
 </div>
