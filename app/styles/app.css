@@ -35,7 +35,9 @@ html, body {
   zoom: 200%;
 }
 
-
+.help-block {
+  text-align: center;
+}
 
 .city-selection {
   position: absolute;

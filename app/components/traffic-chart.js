@@ -9,6 +9,11 @@ export default Ember.Component.extend({
 
   xPosition: d3.time.format("%H")(new Date()),
 
+  hour: function() {
+    return this.get('xPosition') + ":00";
+  }.property('xPosition'),
+
+
   reloader: function () {
     this.sendAction('changeCity', this.get('currentCity'));
   }.observes('currentCity').on('init'),
