@@ -16,12 +16,7 @@ export default Ember.ObjectController.extend({
     };
   }),
 
-  // filteredWeekStats: function () {
-  //   var weekStats = this.get('weekStats');
-  //   return weekStats.filterBy('day', 'Wed');
-  // }.property('model', 'weekStats'),
-
-  day: 'Wed',
+  day: d3.time.format("%a")(new Date()),
 
   filteredWeekStats: Ember.computed.filter('weekStats', function (stat) {
     var date = stat.created_at,
@@ -40,8 +35,6 @@ export default Ember.ObjectController.extend({
 
   weekStats: [],
 
-  dayChart: false,
-
   actions: {
 
     changeChart: function () {
@@ -54,8 +47,8 @@ export default Ember.ObjectController.extend({
     },
 
     setDay: function (day) {
-      console.log(day);
       this.set('day', day);
+      this.notifyPropertyChange('weekStats');
     }
   }
 });

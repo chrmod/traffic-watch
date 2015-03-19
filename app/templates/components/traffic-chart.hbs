@@ -1,34 +1,23 @@
-{{#if dayChart }}
-{{ time-series-chart
-  barData=timeSeriesBarContent
-  lineData=dayContent
-  selectedInterval='H'
-}}
-{{else}}
 {{ time-series-chart
   barData=timeSeriesBarContent
   lineData=weekContent
   selectedInterval='D'
 }}
-{{/if}}
 
-
-
-{{#if dayChart}}
-<div class='btn btn-default' {{action "changeChart" on="click"}} > WEEK </div>
-{{else}}
-<div class='btn btn-default' {{action "changeChart" on="click"}} > DAY </div>
-{{/if}}
-<div class='btn btn-default' {{action "setDay" "Thu" on="click"}} > Thu </div>
-
+<div class='btn btn-default' {{action "setDay" "Mon" on="click"}} > Mon </div>
+<div class='btn btn-default' {{action "setDay" "Tue" on="click"}} > Tue </div>
 <div class='btn btn-default' {{action "setDay" "Wed" on="click"}} > Wed </div>
+<div class='btn btn-default' {{action "setDay" "Thu" on="click"}} > Thu </div>
+<div class='btn btn-default' {{action "setDay" "Fri" on="click"}} > Fri </div>
+<div class='btn btn-default' {{action "setDay" "Sat" on="click"}} > Sat </div>
+<div class='btn btn-default' {{action "setDay" "Sun" on="click"}} > Sun </div>
+
 
 <div class='pull-right'>
 {{view "select" content=names value=currentCity}}
 </div>
 {{!-- <div class="form-horizontal no-zoom">
   <div class="form-group">
-    <label class="col-lg-4 control-label">Set hour</label>
     <div class="col-lg-8">
       {{ input-range min="0" max="24" step="1" value=xPosition }}
       <span class="help-block">Current hour: {{xPosition}}</span>
