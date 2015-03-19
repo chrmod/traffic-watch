@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import d3 from '../utils/d3';
 
 export default Ember.Component.extend({
 
@@ -6,7 +7,7 @@ export default Ember.Component.extend({
 
   timeSeriesBarContent: [],
 
-  xPosition: 12,
+  xPosition: d3.time.format("%H")(new Date()),
 
   reloader: function () {
     this.sendAction('changeCity', this.get('currentCity'));

@@ -3,6 +3,12 @@
   lineData=weekContent
   selectedInterval='D'
 }}
+
+<div class="hour-slider">
+  {{ input-range min="0" max="24" step="1" value=xPosition }}
+  <span class="help-block">Current hour: {{xPosition}}</span>
+</div>
+
 <div class='day-buttons'>
   <div class='btn btn-default' {{action "setDay" "Mon" on="click"}} > Mon </div>
   <div class='btn btn-default' {{action "setDay" "Tue" on="click"}} > Tue </div>
@@ -16,11 +22,3 @@
 
 
 {{view "select" class='city-selection' content=names value=currentCity}}
-{{!-- <div class="form-horizontal no-zoom">
-  <div class="form-group">
-    <div class="col-lg-8">
-      {{ input-range min="0" max="24" step="1" value=xPosition }}
-      <span class="help-block">Current hour: {{xPosition}}</span>
-    </div>
-  </div>
-</div> --}}

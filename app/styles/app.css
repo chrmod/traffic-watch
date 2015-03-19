@@ -30,8 +30,9 @@ html, body {
   zoom: 50%;
 }
 
-.no-zoom {
-  zoom: 167%;
+.hour-slider {
+  margin-top: -40px;
+  zoom: 200%;
 }
 
 
