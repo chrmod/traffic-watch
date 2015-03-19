@@ -15,4 +15,8 @@ export default DS.Model.extend({
     return this.get('center').split(',')[1];
   }.property('center'),
 
+  polylines: Ember.computed.map('markers', function (marker) {
+    return marker.get('polylines.firstObject');
+  })
+
 });

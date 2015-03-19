@@ -7,6 +7,10 @@ export default DS.Model.extend({
   time_without_traffic:   DS.attr('string'),
   city:                   DS.belongsTo('city'),
   samples:                DS.hasMany('sample', {async: true}),
-  current_load:           DS.attr('string')
+  current_load:           DS.attr('string'),
+  polylines:              DS.hasMany('polyline')
+  // hasInfoWindow:          true,
+  // isInfoWindowVisible:    true,
+  // description:            Ember.computed.alias('current_load')
 
 });

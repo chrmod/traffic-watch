@@ -3,6 +3,6 @@ import DS from 'ember-data';
 export default DS.RESTSerializer.extend(DS.EmbeddedRecordsMixin, {
   attrs: {
     samples: {embedded: 'always'},
-    polylines: {embedded: 'always'}
+    points: {embedded: 'always'}
   }
 });
