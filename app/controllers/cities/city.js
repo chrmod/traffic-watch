@@ -9,13 +9,6 @@ export default Ember.ObjectController.extend({
 // CHART
   timeSeriesBarContent: [],
 
-  dayContent: Ember.computed.map('model.stats', function (stat) {
-    return {
-      time: d3.time.format.iso.parse(stat.get('time')),
-      value: stat.get('value')
-    };
-  }),
-
   day: d3.time.format("%a")(new Date()),
 
   filteredWeekStats: Ember.computed.filter('weekStats', function (stat) {
@@ -29,9 +22,19 @@ export default Ember.ObjectController.extend({
   weekContent: Ember.computed.map('filteredWeekStats', function (stat) {
     return {
       time: d3.time.format.iso.parse(stat.created_at),
-      value: stat.weighted_mean
+      value: parseInt(stat.weighted_mean)
     };
   }),
+
+  xPosition: d3.time.format("%H")(new Date()),
+
+  // setPolylinesTraffic: function () {
+    // m = this.get('polylines.firstObject.marker')
+    // console.log("sets");
+    // console.log(this.get('polylines'));
+    // // p = this.get('polylines.firstObject')
+    // p.set('current_load', load)
+  // }.observes('xPosition'),
 
   weekStats: [],
 

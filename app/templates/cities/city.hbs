@@ -2,13 +2,13 @@
 {{ city-map lat=lat lng=lng markers=markers polylines=polylines }}
 
 <div class='col-md-6'>
-  {{ traffic-chart dayContent=dayContent
-                   weekContent=weekContent
+  {{ traffic-chart weekContent=weekContent
                    dayChart=dayChart
                    names=names
                    currentCity=currentCity
                    changeChart='changeChart'
                    changeCity='changeCity'
                    setDay='setDay'
+                   xPosition=xPosition
   }}
 </div>
