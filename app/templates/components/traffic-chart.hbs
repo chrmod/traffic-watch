@@ -5,7 +5,11 @@
 }}
 
 <div class="hour-slider">
-  {{ input-range min="0" max="24" step="1" value=xPosition }}
+  {{#if setScaledInputRange}}
+    {{ scaled-input-range value=xPosition }}
+  {{else}}
+    {{ input-range value=xPosition }}
+  {{/if}}
   <span class="help-block">{{hour}}</span>
 </div>
 
