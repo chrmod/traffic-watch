@@ -5,7 +5,6 @@ export default Ember.Component.extend({
 
   classNames: ["city-map"],
 
-
   zoom:        10,
   type:        'road',
   mapTypes:    MAP_TYPES,

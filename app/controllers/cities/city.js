@@ -7,7 +7,8 @@ export default Ember.ObjectController.extend({
 
   names: Ember.computed.alias('controllers.cities.names'),
   currentCity: 'Warsaw',
-// CHART
+
+// traffic-chart
   timeSeriesBarContent: [],
 
   day: d3.time.format("%a")(new Date()),
@@ -29,8 +30,10 @@ export default Ember.ObjectController.extend({
 
   note: null,
 
+// input-range
   xPosition: d3.time.format("%H")(new Date()),
 
+// city-map
   renderMap: null,
 
   getLoad: function () {
@@ -57,11 +60,11 @@ export default Ember.ObjectController.extend({
   },
 
   getDate: function () {
-    var date = new Date();
+    var midnightDate = new Date(this.get('filteredWeekStats.firstObject.created_at'));
     var hour = this.get('xPosition');
-    var hourDifference = date.getHours() - hour;
-    var dateInNumber = date - hourDifference * 60 * 60 * 1000;
-    return new Date(dateInNumber);
+    var dateInNumber = midnightDate.setHours(hour);
+    var date = new Date(dateInNumber);
+    return date;
   },
 
   setPolylinesTraffic: function () {

@@ -4,8 +4,6 @@ import {
 } from 'ember-qunit';
 
 moduleFor('route:cities', 'CitiesRoute', {
-  // Specify the other units that are required for this test.
-  // needs: ['controller:foo']
 });
 
 test('it exists', function() {
