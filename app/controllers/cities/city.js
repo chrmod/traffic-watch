@@ -1,5 +1,6 @@
 import Ember from 'ember';
 import d3 from '../../utils/d3';
+import request from 'ic-ajax';
 
 export default Ember.ObjectController.extend({
   needs: ['cities'],
@@ -26,26 +27,52 @@ export default Ember.ObjectController.extend({
     };
   }),
 
+  note: null,
+
   xPosition: d3.time.format("%H")(new Date()),
 
-  // setPolylinesTraffic: function () {
-    // m = this.get('polylines.firstObject.marker')
-    // console.log("sets");
-    // console.log(this.get('polylines'));
-    // // p = this.get('polylines.firstObject')
-    // p.set('current_load', load)
-  // }.observes('xPosition'),
+  renderMap: null,
+
+  getLoad: function () {
+    var date = this.getDate();
+    var promises = []
+    this.get('polylines').forEach(function (polyline) {
+      var polyline = polyline;
+      promises.addObject(request({
+        url: '/marker_load/%@'.fmt(polyline.get('marker.id')),
+        type: 'GET',
+        data: {
+          date: date
+        }
+      }).then(function (response) {
+        polyline.get('marker').set('current_load', response['load']);
+        polyline.notifyPropertyChange('current_load');
+      }).catch(function (error) {
+        console.log(error);
+      }));
+    })
+    new Ember.RSVP.all(promises).then(function() {
+      this.set('renderMap', this.get('xPosition'));
+    }.bind(this));
+  },
+
+  getDate: function () {
+    var date = new Date();
+    var hour = this.get('xPosition');
+    var hourDifference = date.getHours() - hour;
+    var dateInNumber = date - hourDifference * 60 * 60 * 1000;
+    return new Date(dateInNumber);
+  },
+
+  setPolylinesTraffic: function () {
+    this.getLoad()
+  }.observes('xPosition'),
 
   weekStats: [],
 
   actions: {
 
-    changeChart: function () {
-      this.toggleProperty('dayChart');
-    },
-
     changeCity: function (city) {
-      this.set('dayChart', false);
       return this.transitionToRoute('cities.city', city);
     },
 

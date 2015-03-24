@@ -8,6 +8,10 @@ export default Ember.Component.extend({
 
   zoom:        10,
   type:        'road',
-  mapTypes:    MAP_TYPES
+  mapTypes:    MAP_TYPES,
+
+  rerenderPolylines: function() {
+    this.rerender();
+  }.observes('renderMap')
 
 });
