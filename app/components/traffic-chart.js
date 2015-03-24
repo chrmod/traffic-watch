@@ -20,10 +20,6 @@ export default Ember.Component.extend({
 
   actions: {
 
-    changeChart: function () {
-      this.sendAction('changeChart');
-    },
-
     setDay: function (day) {
       this.sendAction('setDay', day);
     }
