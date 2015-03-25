@@ -11,6 +11,6 @@ export default Ember.Component.extend({
 
   rerenderPolylines: function() {
     this.rerender();
-  }.observes('renderMap')
+  }.observes('renderMap', 'day')
 
 });
