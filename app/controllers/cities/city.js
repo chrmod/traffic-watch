@@ -28,8 +28,6 @@ export default Ember.ObjectController.extend({
     };
   }),
 
-  note: null,
-
 // input-range
   xPosition: d3.time.format("%H")(new Date()),
 
@@ -82,6 +80,7 @@ export default Ember.ObjectController.extend({
     setDay: function (day) {
       this.set('day', day);
       this.notifyPropertyChange('weekStats');
+      this.notifyPropertyChange('xPosition');
     }
   }
 });

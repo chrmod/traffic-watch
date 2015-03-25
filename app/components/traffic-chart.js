@@ -8,11 +8,17 @@ export default Ember.Component.extend({
 
   hour: function() {
     return this.get('xPosition') + ":00";
-  }.property('xPosition'),
+  }.property('xPosition', 'setScaledInputRange'),
 
   setScaledInputRange: function () {
     return this.get('day') == d3.time.format("%a")(new Date());
   }.property('day'),
+
+  resetInputRange: function() {
+    if(this.get('setScaledInputRange')) {
+      this.set('xPosition', d3.time.format("%H")(new Date()));
+    }
+  }.observes('setScaledInputRange'),
 
   reloader: function () {
     this.sendAction('changeCity', this.get('currentCity'));
