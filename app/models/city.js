@@ -4,6 +4,7 @@ export default DS.Model.extend({
 
   name:       DS.attr('string'),
   center:     DS.attr('string'),
+  zoom:       DS.attr('number'),
   markers:    DS.hasMany('marker'),
   stats:      DS.hasMany('stat', {async: true}),
 
