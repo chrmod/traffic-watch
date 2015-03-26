@@ -40,7 +40,7 @@ export default Ember.ObjectController.extend({
     this.get('polylines').forEach(function (polyline) {
       var polyline = polyline;
       promises.addObject(request({
-        url: '/marker_load/%@'.fmt(polyline.get('marker.id')),
+        url: '/markers/%@/sample'.fmt(polyline.get('marker.id')),
         type: 'GET',
         data: {
           date: date

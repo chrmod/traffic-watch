@@ -9,11 +9,4 @@ export default DS.Model.extend({
   current_load:           DS.attr('string'),
   polylines:              DS.hasMany('polyline')
 
-  // currently relation with samples is not needed
-  // samples:                DS.hasMany('sample', {async: true}),
-
-  // hasInfoWindow:          true,
-  // isInfoWindowVisible:    true,
-  // description:            Ember.computed.alias('current_load')
-
 });
