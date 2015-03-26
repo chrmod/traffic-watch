@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import d3 from '../utils/d3';
 
 export default Ember.Component.extend({
 
@@ -41,9 +42,11 @@ export default Ember.Component.extend({
 
   timeSeriesBarContent: [],
 
-  hour: function() {
-    return this.get('xPosition') + ":00";
-  }.property('xPosition'),
+  hour: d3.time.format("%H")(new Date()),
+
+  setHour: function() {
+    return this.get('hour') + ":00";
+  }.property('hour'),
 
   actions: {
 
