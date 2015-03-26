@@ -10,7 +10,7 @@ export default Ember.Route.extend({
 
   afterModel: function(model) {
     request({
-      url: '/stats/%@'.fmt(model.get('name')),
+      url: '/cities/%@/stats'.fmt(model.get('name')),
       type: 'GET',
       dataType: 'json'
     }).then(function (response) {
