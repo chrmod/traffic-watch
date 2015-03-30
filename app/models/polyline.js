@@ -10,7 +10,7 @@ export default DS.Model.extend({
   }),
 
   strokeColor: Ember.computed('current_load', function () {
-    var percentage = parseInt(this.get('current_load').split('%')[0])
+    var percentage = this.get('current_load')
     if(percentage > 150) {
       return "#FF0000";
     } else if (percentage > 120) {

@@ -1,13 +1,19 @@
-{{ city-map lat=lat lng=lng markers=markers polylines=polylines
-renderMap=renderMap day=day zoom=zoom}}
+{{ city-map lat=lat
+            lng=lng
+            markers=markers
+            polylines=polylines
+            renderMap=renderMap
+            day=day
+            zoom=zoom
+}}
 
 <div class='col-md-6'>
   {{ traffic-chart weekContent=weekContent
                    names=names
                    currentCity=currentCity
-                   changeCity='changeCity'
-                   setDay='setDay'
                    xPosition=xPosition
                    day=day
+                   changeCity='changeCity'
+                   setDay='setDay'
   }}
 </div>

@@ -58,7 +58,15 @@ export default Ember.ObjectController.extend({
   },
 
   getDate: function () {
-    var midnightDate = new Date(this.get('filteredWeekStats.firstObject.created_at'));
+    var wantedTime = this.get('filteredWeekStats.firstObject.created_at');
+    if(Ember.isBlank(wantedTime)) {
+      wantedTime = new Date();
+      var sevenDaysAgo = wantedTime.getDate() - 7;
+      wantedTime = new Date(wantedTime.setDate(sevenDaysAgo));
+      wantedTime = new Date(wantedTime.setHours(0));
+      wantedTime = new Date(wantedTime.setMinutes(0));
+    }
+    var midnightDate = new Date(wantedTime);
     var hour = this.get('xPosition');
     var dateInNumber = midnightDate.setHours(hour);
     var date = new Date(dateInNumber);

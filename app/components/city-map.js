@@ -8,7 +8,7 @@ export default Ember.Component.extend({
   type:        'road',
   mapTypes:    MAP_TYPES,
 
-  rerenderPolylines: function() {
+  rerenderPolylines: function () {
     this.rerender();
   }.observes('renderMap', 'day')
 
